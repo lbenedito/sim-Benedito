@@ -1,0 +1,83 @@
+@import "../base/extends";
+@import "../base/mixin";
+@import "../base/variables";
+
+.main{
+    border: $borde;
+    margin: 0;
+}
+
+.encabezadosh1{
+    @extend %encabezados;
+}
+
+.encabezados img{
+    @include display (inline-block);
+    @include size (220px, 200px);
+    position: relative;
+    top: 1em;
+    left: 9em;
+}
+
+#vela1{
+    @extend %velas;
+    margin-left: 0.3;
+}
+
+#vela2{
+    @extend %velas;
+}
+
+#vela3{
+    @extend %velas;
+}
+
+.colorbox{
+    background-color: $primary-color;
+    border: $borde;
+    position: relative;
+    @extend %width-max;
+    padding: 50px 60px;
+    text-align: justify;
+}
+
+.encabezado-productos{
+    font-family: $font-stack;
+    font-weight: bolder;
+    @include display(inline-flex);
+    padding: inherit;
+    margin: auto;
+    justify-content: center;
+    border-bottom: $border-bottom;
+}
+
+.aside{
+    background-color: $primary-color;
+    color: $letter-color;
+    list-style: none;
+    padding-right: 5px;
+    @include display(grid);
+    @include grid(1fr 5fr, 1fr repeat(6, 0fr));
+    @include gap(0px, 50px);
+}
+
+.grid-container{
+    @include display(grid);
+    @include grid(1fr 1fr 1fr 1fr 1fr 1fr, repeat(7, 100px));
+    @include gap(50px, 100px);
+    
+}
+
+.gridimg{
+    @include display(inline-flex);
+    @include flex(space-between, center);
+    flex-wrap: wrap;
+}
+
+.letter{
+    color: $letter-color;
+}
+
+.slide{
+    width: 2000px;
+}

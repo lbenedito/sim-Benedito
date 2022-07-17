@@ -1,0 +1,47 @@
+@import "../base/variables";
+@import "../base/mixin";
+@import "../base/extends";
+
+.a{
+    color: $letter-color;
+    @include estilo(none, none);
+    box-sizing: border-box;
+}
+
+.footer {
+    background: $primary-color;
+    color: $letter-color;
+    border: $borde;
+    @include estilo(none, none); }
+    .footer .grupo1 {
+      @extend %width-max;
+      margin: auto;
+      @include display(grid);
+      @include grid(repeat(3, 1fr), none);
+      grid-gap: 50px;
+      margin-left: 25px;
+      padding: 45px 0px;
+      @include estilo(none,none);
+    }
+
+      .footer .grupo1 .box figure {
+        @include size(100%, 100%);
+        @include display(flex);
+        @include flex(center, center); }
+      .footer .grupo1 .box h2 {
+        color: $letter-color;
+        margin-bottom: 25px;
+        font-size: 20px;
+        text-decoration: underline; }
+    .footer .grupo2 {
+      padding: 15px 10px;
+      font-style: italic;
+      text-align: center;
+      color: $letter-color; }
+  
+  .footer-ul {
+    @include display(inline);
+    @include estilo(none, none); }
+    .footer-ul li {
+      color: $letter-color;
+      margin-bottom: 10px; }

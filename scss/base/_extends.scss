@@ -1,0 +1,26 @@
+@import "../base/variables";
+
+%encabezados{
+    font-family: $font-stack;
+	font-weight: bolder;
+	display: inline-flex;
+	padding: inherit;
+	margin: auto;
+	justify-content: center;
+	border-bottom: $border-bottom;
+}
+
+%velas{
+    margin-right: 15em;
+}
+
+%width-max{
+    width: 100%;
+    max-width: 2200px;
+}
+
+%form{
+	display: block;
+	width: 100%;
+	margin-bottom: 8px;
+}

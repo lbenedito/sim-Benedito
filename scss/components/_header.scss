@@ -1,0 +1,21 @@
+@import "../base/mixin";
+@import "../base/variables";
+
+.menu-container{
+    @include display(grid);
+    @include grid(6fr, 0.2fr);
+    @include gap(0px, 50px);
+    grid-column-end: span 5;
+    background-color: $primary-color;
+    color: $letter-color;
+}
+
+.img-logo{
+    @include display(inline-flex);
+    @extend %width-max;
+    cursor: pointer;
+}
+
+.botones{
+    @include botones(5,6);
+}

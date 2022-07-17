@@ -1,0 +1,38 @@
+@import "../base/variables";
+@import "../base/mixin";
+@import "../base/extends";
+
+.formulario{
+    background-color: $primary-color;
+    width: 350px;
+    margin: auto;
+    box-sizing: border-box;
+    border: $borde;
+}
+
+.contact{
+    display: inline;
+    margin: auto;
+    overflow: wrap;
+    color: black; 
+}
+.contact label{
+  @extend %form;
+} 
+.contact input{
+  @extend %form;
+}
+.contact textarea{
+       @extend %form;
+    }
+
+.contact label{
+  font-weight: 400;
+}
+
+.contact input:not([type="submit"]), .contact textarea{
+  border: none;
+  border-bottom: $borde;
+  margin-bottom: 10px;
+  font-size: 20px;
+}

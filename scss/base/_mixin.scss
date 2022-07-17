@@ -1,0 +1,34 @@
+@mixin display ($display){
+    display: $display;
+}
+
+@mixin grid ($columns, $rows){
+grid-template-columns: $columns;
+grid-template-rows: $rows;
+}
+
+@mixin gap ($rowgap, $columngap){
+    row-gap: $rowgap;
+    column-gap: $columngap;
+}
+
+    
+@mixin flex ($justify, $align){
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin size ($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@mixin estilo ($textdecor, $liststyle){
+    text-decoration: $textdecor;
+    list-style: $liststyle;
+}
+
+@mixin botones ($start, $end){
+    grid-column-start: $start;
+    grid-column-end: $end;
+}

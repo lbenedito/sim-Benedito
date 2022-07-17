@@ -1,0 +1,11 @@
+@import "../scss/base/extends";
+@import "../scss/base/mixin";
+@import "../scss/base/variables";
+@import "../scss/Components/header";
+@import "../scss/Components/main";
+@import "../scss/Components/footer";
+@import "../scss/Components/contacto";
+
+.body {
+    background: #fffcfc;
+    font: "Montserrat", sans-serif; }
