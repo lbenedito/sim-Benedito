@@ -26,7 +26,7 @@
   <meta property="og:description" content="Ingresá a nuestra web y conocé nuestros productos">
 
   <!-- Javascript -->
-  <script src="./js/main.js"></script>
+  <script src="./js/carrito.js"></script>
   
   <title>Productos - P&L CANDLES ARGENTINA | ELEGÍ EL AROMA QUE TE REPRESENTA</title>
 </head>
@@ -89,6 +89,7 @@
   </nav>
   <!-- Fin del header -->
 
+  
 
   <main class="container">
     <div class="row">
@@ -99,6 +100,7 @@
     <br>
     <br>
     <br>
+    
 
     <!-- Filtro de búsqueda -->
     <aside class="aside">
@@ -111,328 +113,184 @@
       </ul>
 
       <section class="grid-container d-flex lista-velas" class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 template-card" >
           <div class="col">
-            <div class="card h-100 w-100">
+            <div class="card h-100 w-100" id="1">
               <img src="images/Coconut.webp" class="card-img-top" alt="Coconut">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Coconut</h5>
                 <p class="card-text d-flex justify-content-center">$4.100</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <button class="btn-sm btn-color">Agregar al carrito</button>
-                </select>
-                
+                  <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="2">
               <img src="images/Vanilla.webp" class="card-img-top" alt="Vanilla">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Vanilla</h5>
                 <p class="card-text d-flex justify-content-center">$4.500</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="2">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="3">
               <img src="images/Citric.webp" class="card-img-top" alt="Citric">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Citric</h5>
                 <p class="card-text d-flex justify-content-center">$3.800</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="3">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="4">
               <img src="images/Bubblegum.webp" class="card-img-top" alt="Bubblegum">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Bubblegum</h5>
                 <p class="card-text d-flex justify-content-center">$3.300</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="4">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="5">
               <img src="images/LAVANDER.webp" class="card-img-top" alt="Lavander">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Lavander</h5>
                 <p class="card-text d-flex justify-content-center">$3.300</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="5">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="6">
               <img src="images/Wonderlust.webp" class="card-img-top" alt="Wonderlust">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Wonderlust</h5>
                 <p class="card-text d-flex justify-content-center">$3.500</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="6">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="7">
               <img src="images/Pomegrade.webp" class="card-img-top" alt="Pomegrade">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Pomegrade</h5>
                 <p class="card-text d-flex justify-content-center">$2.000</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="7">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="8">
               <img src="images/Coconut XL.webp" class="card-img-top" alt="Coconut-XL">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Coconut XL</h5>
                 <p class="card-text d-flex justify-content-center">$8.100</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="8">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="9">
               <img src="images/Vanilla XL.webp" class="card-img-top" alt="Vanilla-XL">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Vanilla XL</h5>
                 <p class="card-text d-flex justify-content-center">$8.200</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="9">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="10">
               <img src="images/Citric XL FOTOPRODUCTO.webp" class="card-img-top" alt="Citric-XL">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Citric XL</h5>
                 <p class="card-text d-flex justify-content-center">$4.800</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="10">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="11">
               <img src="images/Bubblegum XL.webp" class="card-img-top" alt="Bubblegum-XL">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Bubblegum XL</h5>
                 <p class="card-text d-flex justify-content-center">$4.300</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="11">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="12">
               <img src="images/Foto-lavander.webp" class="card-img-top" alt="Lavander-XL">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Lavander XL</h5>
                 <p class="card-text d-flex justify-content-center">$5.000</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="12">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="13">
               <img src="images/wonderlust XL.webp" class="card-img-top" alt="Wonderlust-XL">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Wonderlust XL</h5>
                 <p class="card-text d-flex justify-content-center">$4.500</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="13">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="14">
               <img src="images/Pomegrade-XL.webp" class="card-img-top" alt="Pomegrade-XL">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Pomegrade XL</h5>
                 <p class="card-text d-flex justify-content-center">$4.300</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="14">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="15">
               <img src="images/Coconut XXL.webp" class="card-img-top" alt="Coconut-XXL">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Cococnut XXL</h5>
                 <p class="card-text d-flex justify-content-center">$10.200</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="15">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="16">
               <img src="images/Vanilla-XXL.webp" class="card-img-top" alt="Vanilla-XXL">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Vanilla XXL</h5>
                 <p class="card-text d-flex justify-content-center">$10.500</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="16">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="17">
               <img src="images/Citric XXL.webp" class="card-img-top" alt="Citric-XXL">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Citric XXL</h5>
                 <p class="card-text d-flex justify-content-center">$8.200</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="17">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100" id="18">
               <img src="images/Bubblegum XXL.webp" class="card-img-top" alt="Bubblegum-XXL">
               <div class="card-body">
                 <h5 class="card-title d-flex justify-content-center">Bubblegum XXL</h5>
                 <p class="card-text d-flex justify-content-center">$8.500</p>
-                <h6 class="d-flex justify-content-center">Cantidad</h6>
-                <select class="d-flex justify-content-center" name="cantidad" id="cantidad">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <a href="#" class="u-full-widht button-primary button input agregar-carrito" data-id="18">Agregar al
-                  carrito</a>
+                <button class="btn-sm btn-dark">Comprar</button>
               </div>
             </div>
           </div>
@@ -441,7 +299,27 @@
       </section>
 
     </aside>
+    <br>
+    <br>
+    <br>
 
+
+    <div class="container">
+    <div class="row">
+        <!-- Elementos generados a partir del JSON -->
+        <main id="items" class="col-sm-8 row"></main>
+        <!-- Carrito -->
+        <aside class="col-sm-4">
+            <h2>Carrito</h2>
+            <!-- Elementos del carrito -->
+            <ul id="carrito" class="list-group"></ul>
+            <hr>
+            <!-- Precio total -->
+            <p class="text-right">Total: <span id="total"></span>&euro;</p>
+            <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+        </aside>
+    </div>
+</div>
 
   </main>
 
