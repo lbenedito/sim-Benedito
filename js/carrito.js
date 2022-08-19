@@ -116,6 +116,7 @@ const DOMitems = document.querySelector('#items');
 const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
 const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+const comprar = document.querySelector('#comprar');
 
 // Funciones
 
@@ -141,7 +142,7 @@ function renderizarProductos() {
         miNodoPrecio.textContent = `${info.precio}${divisa}`;
         // Boton 
         const miNodoBoton = document.createElement('button');
-        miNodoBoton.classList.add('btn', 'btn-primary');
+        miNodoBoton.classList.add('btn', 'btn-dark');
         miNodoBoton.textContent = '+';
         miNodoBoton.setAttribute('marcador', info.id);
         miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
@@ -157,11 +158,17 @@ function renderizarProductos() {
 /**
  * Evento para añadir un producto al carrito de la compra
  */
-function anyadirProductoAlCarrito(evento) {
+document.getElementById('comprar').addEventListener('click', () => {
+    Swal.fire({
+    title:'El producto se ha añadido correctamente',
+    icon: 'success',
+    confirmButtonText: 'Ok'
+    });
+
     carrito.push(evento.target.getAttribute('marcador'))
     renderizarCarrito();
 
-}
+})
 
 function renderizarCarrito() {
     DOMcarrito.textContent = '';
@@ -215,7 +222,7 @@ function calcularTotal() {
 
 
 function vaciarCarrito() {
-    carrito = [];
+    carrito = [],
     renderizarCarrito();
 }
 
