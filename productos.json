@@ -1,0 +1,111 @@
+[
+    {
+        "id": 1,
+        "nombre": "Coconut",
+        "precio": 4100,
+        "thumbnailUrl": "https://drive.google.com/file/d/1RfsI8GNc09Bbx-wJrfiv8DYPmbSQ8T-0/view?usp=sharing"
+    },
+    {
+        "id": 2,
+        "nombre": "Vanilla",
+        "precio": 4500,
+        "thumbnailUrl": "https://drive.google.com/file/d/1Zios19fG239f9sSvJS7PoGOwSyoyX0gK/view?usp=sharing"
+    },
+    {
+        "id": 3,
+        "nombre": "Citric",
+        "precio": 3800,
+        "thumbnailUrl": "https://drive.google.com/file/d/1FOjlD9g1Ga0dG3Bw3oxsnkx35AOUp3Yi/view?usp=sharing"
+    },
+    {
+        "id": 4,
+        "nombre": "Bubblegum",
+        "precio": 3300,
+        "thumbnailUrl": "https://drive.google.com/file/d/1Ag9wrNG45MjZwGwuIHcERwwnOeeAv1ov/view?usp=sharing"
+    },
+    {
+        "id": 5,
+        "nombre": "Lavander",
+        "precio": 3300,
+        "thumbnailUrl": "https://drive.google.com/file/d/1rxL94FnM0otXZQu2ZX8DQv6R8u2K689W/view?usp=sharing"
+    },
+    {
+        "id": 6,
+        "nombre": "Wonderlust",
+        "precio": 3500,
+        "thumbnailUrl": "https://drive.google.com/file/d/1NVcrys2IRjEzA7R6GG_q5MSBSAQg7z8r/view?usp=sharing"
+    },
+    {
+        "id": 7,
+        "nombre": "Pomegrade",
+        "precio": 2000,
+        "thumbnailUrl": "https://drive.google.com/file/d/1JTCQLEeexw0OzCP2UHnRdNWIVLTuFaQJ/view?usp=sharing"
+    },
+    {
+        "id": 8,
+        "nombre": "Coconut XL",
+        "precio": 8100,
+        "thumbnailUrl": "https://drive.google.com/file/d/15PANE36kp9iEVEINmc3g6EsD3fTkc6Io/view?usp=sharing"
+    },
+    {
+        "id": 9,
+        "nombre": "Vanilla XL",
+        "precio": 8200,
+        "thumbnailUrl": "https://drive.google.com/file/d/19UKLlMqionoJIDL4Y53MJY_BZEP9PxD7/view?usp=sharing"
+    },
+    {
+        "id": 10,
+        "nombre": "Citric XL",
+        "precio": 4800,
+        "thumbnailUrl": "https://drive.google.com/file/d/1Pwd-7UIi9RNQaC_JXAHQy4DFw9gFJv7R/view?usp=sharing"
+    },
+    {
+        "id": 11,
+        "nombre": "Bubblegum XL",
+        "precio": 4300,
+        "thumbnailUrl": "https://drive.google.com/file/d/1JHFqZY9Dho-0L8GlVPFMKV-wkEBc-jFO/view?usp=sharing"
+    },
+    {
+        "id": 12,
+        "nombre": "Lavander XL",
+        "precio": 5000,
+        "thumbnailUrl": "https://drive.google.com/file/d/1lZADhVfxzvOMvFzgUEvNd-ozrz5yFuLT/view?usp=sharing"
+    },
+    {
+        "id": 13,
+        "nombre": "Wonderlust XL",
+        "precio": 4500,
+        "thumbnailUrl": "https://drive.google.com/file/d/1U2j7WfwSr3RJNW4uX_TTVFt2u7bh9p7K/view?usp=sharing"
+    },
+    {
+        "id": 14,
+        "nombre": "Pomegrade XL",
+        "precio": 4300,
+        "thumbnailUrl": "https://drive.google.com/file/d/1YgJ2_QMzgEwcRvfC0cCP8KTUlHS6q7Xd/view?usp=sharing"
+    },
+    {
+        "id": 15,
+        "nombre": "Coconut XXL",
+        "precio": 10200,
+        "thumbnailUrl": "https://drive.google.com/file/d/172ryRqtIyhaattmStx60QB9BeRHUGwlC/view?usp=sharing"
+    },
+    {
+        "id": 16,
+        "nombre": "Vanilla XXL",
+        "precio": 10500,
+        "thumbnailUrl": "https://drive.google.com/file/d/1aLPD5T7SPx8ih1ha_Vb1TD5Herg9soN_/view?usp=sharing"
+    },
+    {
+        "id": 17,
+        "nombre": "Citric XXL",
+        "precio": 8200,
+        "thumbnailUrl": "https://drive.google.com/file/d/1ADeihKkNJHP3_ERHLaYQJpmSBKNyTMBW/view?usp=sharing"
+    },
+    {
+        "id": 18,
+        "nombre": "Bubblegum XXL",
+        "precio": 8500,
+        "thumbnailUrl": "https://drive.google.com/file/d/1kuIGc6slLEZB6THwKhJMITcCsLURsNkK/view?usp=sharing"
+    }
+
+]

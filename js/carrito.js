@@ -1,234 +1,136 @@
-const baseDeDatos = [
-    {
-        id: 1,
-        nombre: 'Coconut',
-        precio: 4100,
-        imagen: 'Coconut.webp'
-    },
-    {
-        id: 2,
-        nombre: 'Vanilla',
-        precio: 4500,
-        imagen: 'Vanilla.webp'
-    },
-    {
-        id: 3,
-        nombre: 'Citric',
-        precio: 3800,
-        imagen: 'Citric.webp'
-    },
-    {
-        id: 4,
-        nombre: 'Bubblegum',
-        precio: 3300,
-        imagen: 'Bubblegum.webp'
-    },
-    {
-        id: 5,
-        nombre: 'Lavander',
-        precio: 3300,
-        imagen: 'Lavander.webp'
-    },
-    {
-        id: 6,
-        nombre: 'Wonderlust',
-        precio: 3500,
-        imagen: 'Wonderlust.webp'
-    },
-    {
-        id: 7,
-        nombre: 'Pomegrade',
-        precio: 2000,
-        imagen: 'Pomegrade.webp'
-    },
-    {
-        id: 8,
-        nombre: 'Coconut XL',
-        precio: 8100,
-        imagen: 'Coconut XL.webp'
-    },
-    {
-        id: 9,
-        nombre: 'Vanilla XL',
-        precio: 8200,
-        imagen: 'Vanilla XL.webp'
-    },
-    {
-        id: 10,
-        nombre: 'Citric XL',
-        precio: 4800,
-        imagen: 'Citric XL FOTOPRODUCTO.webp'
-    },
-    {
-        id: 11,
-        nombre: 'Bubblegum XL',
-        precio: 4300,
-        imagen: 'Bubblegum XL.webp'
-    },
-    {
-        id: 12,
-        nombre: 'Lavander XL',
-        precio: 5000,
-        imagen: 'Foto-lavander.webp'
-    },
-    {
-        id: 13,
-        nombre: 'Wonderlust XL',
-        precio: 4500,
-        imagen: 'wonderlust XL.webp'
-    },
-    {
-        id: 14,
-        nombre: 'Pomegrade XL',
-        precio: 4300,
-        imagen: 'Pomegrade-XL.webp'
-    },
-    {
-        id: 15,
-        nombre: 'Coconut XXL',
-        precio: 10200,
-        imagen: 'Coconut XXL.webp'
-    },
-    {
-        id: 16,
-        nombre: 'Vanilla XXL',
-        precio: 10500,
-        imagen: 'Vanilla-XXL.webp'
-    },
-    {
-        id: 17,
-        nombre: 'Citric XXL',
-        precio: 8200,
-        imagen: 'Citric XXL.webp'
-    },
-    {
-        id: 18,
-        nombre: 'Bubblegum XXL',
-        precio: 8500,
-        imagen: 'Bubblegum XXL.webp'
-    }
+const cards = document.getElementById('cards')
+const elementos = document.getElementById('elementos')
+const footer = document.getElementById('carrito-footer')
+const template = document.getElementById('template-card').content
+const templateFooter = document.getElementById('template-footer').content
+const templateCarrito =document.getElementById('template-carrito').content
+const fragment = document.createDocumentFragment()
+let carrito = {}
 
-];
-
-let carrito = [];
-const divisa = '$';
-const DOMitems = document.querySelector('#items');
-const DOMcarrito = document.querySelector('#carrito');
-const DOMtotal = document.querySelector('#total');
-const DOMbotonVaciar = document.querySelector('#boton-vaciar');
-const comprar = document.querySelector('#comprar');
-
-// Funciones
-
-function renderizarProductos() {
-    baseDeDatos.forEach((info) => {
-        // Estructura
-        const miNodo = document.createElement('div');
-        miNodo.classList.add('card', 'col-sm-4');
-        // Body
-        const miNodoCardBody = document.createElement('div');
-        miNodoCardBody.classList.add('card-body');
-        // Titulo
-        const miNodoTitle = document.createElement('h5');
-        miNodoTitle.classList.add('card-title');
-        miNodoTitle.textContent = info.nombre;
-        // Imagen
-        const miNodoImagen = document.createElement('img');
-        miNodoImagen.classList.add('img-fluid');
-        miNodoImagen.setAttribute('src', info.imagen);
-        // Precio
-        const miNodoPrecio = document.createElement('p');
-        miNodoPrecio.classList.add('card-text');
-        miNodoPrecio.textContent = `${info.precio}${divisa}`;
-        // Boton 
-        const miNodoBoton = document.createElement('button');
-        miNodoBoton.classList.add('btn', 'btn-dark');
-        miNodoBoton.textContent = '+';
-        miNodoBoton.setAttribute('marcador', info.id);
-        miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
-        miNodoCardBody.appendChild(miNodoImagen);
-        miNodoCardBody.appendChild(miNodoTitle);
-        miNodoCardBody.appendChild(miNodoPrecio);
-        miNodoCardBody.appendChild(miNodoBoton);
-        miNodo.appendChild(miNodoCardBody);
-        DOMitems.appendChild(miNodo);
-    });
-}
-
-/**
- * Evento para añadir un producto al carrito de la compra
- */
-document.getElementById('comprar').addEventListener('click', () => {
-    Swal.fire({
-    title:'El producto se ha añadido correctamente',
-    icon: 'success',
-    confirmButtonText: 'Ok'
-    });
-
-    carrito.push(evento.target.getAttribute('marcador'))
-    renderizarCarrito();
-
+document.addEventListener('DOMContentLoaded', () => {
+    fetchData()
 })
 
-function renderizarCarrito() {
-    DOMcarrito.textContent = '';
-    const carritoSinDuplicados = [...new Set(carrito)];
-    carritoSinDuplicados.forEach((item) => {
-        const miItem = baseDeDatos.filter((itemBaseDatos) => {
-            return itemBaseDatos.id === parseInt(item);
-        });
-        // Cuenta el número de veces que se repite el producto
-        const numeroUnidadesItem = carrito.reduce((total, itemId) => {
-            return itemId === item ? total += 1 : total;
-        }, 0);
-        const miNodo = document.createElement('li');
-        miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
-        miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
-        // Boton de borrar
-        const miBoton = document.createElement('button');
-        miBoton.classList.add('btn', 'btn-danger', 'mx-5');
-        miBoton.textContent = 'X';
-        miBoton.style.marginLeft = '1rem';
-        miBoton.dataset.item = item;
-        miBoton.addEventListener('click', borrarItemCarrito);
-        miNodo.appendChild(miBoton);
-        DOMcarrito.appendChild(miNodo);
-    });
-    DOMtotal.textContent = calcularTotal();
+cards.addEventListener('click', e => {
+    addCarrito(e)
+})
+
+elementos.addEventListener('click', e =>{
+    btnAccion(e)
+})
+
+const fetchData = async () => {
+    try {
+        const res = await fetch ('productos.json')
+        const objeto = await res.json()
+        pintarCards(objeto)
+        addCarrito(objeto)
+    } catch (error) {
+        console.log(error)
+    }
 }
 
-/**
- * Evento para borrar un elemento del carrito
- */
-function borrarItemCarrito(evento) {
-    const id = evento.target.dataset.item;
-    carrito = carrito.filter((carritoId) => {
-        return carritoId !== id;
-    });
-    renderizarCarrito();
+const pintarCards = data => {
+
+   data.forEach(producto => {
+       console.log(producto)
+       template.querySelector('img').setAttribute("src", producto.thumbnailUrl)
+       template.querySelector('h5').textContent = producto.nombre
+       template.querySelector('p span').textContent = producto.precio
+       template.querySelector('button').dataset.id = producto.id
+
+
+       const clone = template.cloneNode(true)
+       fragment.appendChild(clone)
+       cards.appendChild(fragment)
+   })
+   
 }
 
-/**
- * Calcula el precio total teniendo en cuenta los productos repetidos
- */
-function calcularTotal() {
-    return carrito.reduce((total, item) => {
-        const miItem = baseDeDatos.filter((itemBaseDatos) => {
-            return itemBaseDatos.id === parseInt(item);
-        });
-        return total + miItem[0].precio;
-    }, 0).toFixed(2);
+const addCarrito = e => {
+    if (e.target.classList.contains('btn-primary')){
+
+        setCarrito(e.target.parentElement)
+    }
+    e.stopPropagation()
 }
 
+const setCarrito = (objeto) => {
+     const producto= {
+         id: objeto.querySelector('.btn-primary').dataset.id,
+         nombre: objeto.querySelector('h5').textContent,
+         precio: objeto.querySelector('p').textContent,
+         cantidad: 1
+     }
 
-function vaciarCarrito() {
-    carrito = [],
-    renderizarCarrito();
+     if(carrito.hasOwnProperty(producto.id)){
+         producto.cantidad = carrito[producto.id].cantidad + 1
+     }
+
+     carrito[producto.id] = {...producto}
 }
 
-// Eventos
-DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+const pintarCarrito = () =>{
+    elementos.InnerHTML = ''
+    Object.values(carrito).forEach(producto =>{
+        templateCarrito.querySelector('th').textContent = producto.id
+        templateCarrito.querySelectorAll('td')[0].textContent = producto.nombre
+        templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
+        templateCarrito.querySelector('.btn-info').dataset.id = producto.id
+        templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
+        templateCarrito.querySelector('span').textContent = producto.cantidad * producto.precio
 
-// Inicio
-renderizarProductos();
-renderizarCarrito();
+        const clone = templateCarrito.cloneNode(true)
+        fragment.appendChild(clone)
+        elementos.appendChild(fragment)
+        pintarFooter()
+    })
+    
+    
+}
+
+const pintarFooter = () => {
+    footer.innerHTML = ''
+    if (Object.keys(carrito).length === 0){
+        footer.innerHTML = '<th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>' 
+        return
+    }
+
+    const nCantidad = Object.values(carrito).reduce((acc, {cantidad}) => acc + cantidad,0)
+    const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio,0)
+    
+    templateFooter.querySelectorAll('td')[0].textContent = nCantidad
+    templateFooter.querySelector('span').textContent = nPrecio
+
+    const clone = templateFooter.cloneNode(true)
+    fragment.appendChild(clone)
+    footer.appendChild(fragment)
+
+    const btnVaciar = document.getElementById('vaciar-carrito')
+    btnVaciar.addEventListener('click', () => {
+        carrito ={}
+        pintarCarrito()
+    })
+}
+
+const btnAumentarDisminuir = e => {
+    // console.log(e.target.classList.contains('btn-info'))
+    if (e.target.classList.contains('btn-info')) {
+        const producto = carrito[e.target.dataset.id]
+        producto.cantidad++
+        carrito[e.target.dataset.id] = { ...producto }
+        pintarCarrito()
+    }
+
+    if (e.target.classList.contains('btn-danger')) {
+        const producto = carrito[e.target.dataset.id]
+        producto.cantidad--
+        if (producto.cantidad === 0) {
+            delete carrito[e.target.dataset.id]
+        } else {
+            carrito[e.target.dataset.id] = {...producto}
+        }
+        pintarCarrito()
+    }
+    e.stopPropagation()
+}
